@@ -1,5 +1,5 @@
 {
-  "name": "dsh-plugin-swarm",
+  "name": "@aaroncarry/dsh-plugin-swarm",
   "version": "1.0.0",
   "description": "Master/worker multi-agent orchestration plugin for DeepSeek Harness: one master agent fans a goal out to parallel worker subagents with per-tier budgets, optional review-with-redo, and a final synthesis step.",
   "type": "module",

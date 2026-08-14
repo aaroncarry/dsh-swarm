@@ -41,8 +41,14 @@ A high-intelligence **master agent** (the session agent) decomposes one goal int
 The plugin is a plain cordis plugin row, mounted through a dsh profile patch layer.
 
 ```sh
-# 1. install the package into a profile (any pnpm spec works: npm name, github:, file:, link:)
-dsh plugin --profile web add github:<owner>/dsh-plugin-swarm
+# A. from npm (published as @aaroncarry/dsh-plugin-swarm)
+dsh plugin --profile web add @aaroncarry/dsh-plugin-swarm
+
+# B. straight from GitHub
+dsh plugin --profile web add github:aaroncarry/dsh-swarm
+
+# C. a local checkout (copies; re-run update after edits)
+dsh plugin --profile web add file:../dsh-swarm
 
 # 2. add the row to the profile's patch layer
 #    $DSH_HOME/profiles/web/cordis.patch.yml  (see cordis.patch.example.yml)
@@ -53,7 +59,7 @@ The row (all config keys optional):
 ```yaml
 - insert:
     - id: swarm
-      name: dsh-plugin-swarm
+      name: '@aaroncarry/dsh-plugin-swarm'
       config:
         providerName: spawn
 ```
