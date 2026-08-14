@@ -1,5 +1,10 @@
 # dsh-plugin-swarm
 
+[![npm version](https://img.shields.io/npm/v/@aaroncarry/dsh-plugin-swarm)](https://www.npmjs.com/package/@aaroncarry/dsh-plugin-swarm)
+[![license](https://img.shields.io/github/license/aaroncarry/dsh-swarm)](./LICENSE)
+
+**English** | [简体中文](./README.zh-CN.md)
+
 Master/worker multi-agent orchestration for [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness).
 
 A high-intelligence **master agent** (the session agent) decomposes one goal into parallel subtasks and distributes them to **worker subagents** with different intelligence budgets. Workers run in their own fresh contexts through the `subagents` seam; an optional smart **reviewer** grades every result and re-runs weak ones once with feedback; an optional smart **synthesizer** merges everything into a single deliverable.
@@ -38,10 +43,10 @@ A high-intelligence **master agent** (the session agent) decomposes one goal int
 
 ## Install
 
-The plugin is a plain cordis plugin row, mounted through a dsh profile patch layer.
+The plugin is a plain cordis plugin row, mounted through a dsh profile patch layer. Pick the package source that suits you:
 
 ```sh
-# A. from npm (published as @aaroncarry/dsh-plugin-swarm)
+# A. from npm (recommended; published as @aaroncarry/dsh-plugin-swarm)
 dsh plugin --profile web add @aaroncarry/dsh-plugin-swarm
 
 # B. straight from GitHub
