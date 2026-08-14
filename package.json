@@ -1,0 +1,52 @@
+{
+  "name": "dsh-plugin-swarm",
+  "version": "1.0.0",
+  "description": "Master/worker multi-agent orchestration plugin for DeepSeek Harness: one master agent fans a goal out to parallel worker subagents with per-tier budgets, optional review-with-redo, and a final synthesis step.",
+  "type": "module",
+  "main": "src/index.js",
+  "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./src/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src",
+    "index.d.ts",
+    "cordis.patch.example.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "check": "node --check src/index.js"
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "cordis",
+    "plugin",
+    "multi-agent",
+    "swarm",
+    "orchestration",
+    "subagents",
+    "master-worker"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4.0.0",
+    "@deepseek-ai/dsh-agent": ">=0.1.0-rc.0 <0.2.0",
+    "@deepseek-ai/dsh-llm": ">=0.1.0-rc.0 <0.2.0",
+    "@deepseek-ai/dsh-subagent": ">=0.1.0-rc.0 <0.2.0",
+    "@deepseek-ai/dsh-tools": ">=0.1.0-rc.0 <0.2.0"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh-llm": {
+      "optional": true
+    }
+  }
+}

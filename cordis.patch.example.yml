@@ -1,0 +1,22 @@
+# Example row for a dsh profile patch layer.
+#
+# Installation (any machine):
+#   1. dsh plugin --profile <name> add github:<owner>/dsh-plugin-swarm
+#      (or a local path:  dsh plugin --profile <name> add file:../dsh-plugin-swarm)
+#   2. Paste the insert below into $DSH_HOME/profiles/<name>/cordis.patch.yml
+#   3. Restart dsh (or wait for the profile patch watcher to hot-apply it).
+#
+# All config keys are optional; defaults are shown below in comments.
+- insert:
+    - id: swarm
+      name: dsh-plugin-swarm
+      config:
+        # Preferred subagent provider; omit to auto-pick (spawn > fork > first).
+        providerName: spawn
+        # maxTasks: 16
+        # historyLimit: 20
+        # defaultMaxConcurrency: 4
+        # tierBudgets:
+        #   fast: 4096
+        #   standard: 0      # 0 = inherit the master agent's budget
+        #   smart: 16384
